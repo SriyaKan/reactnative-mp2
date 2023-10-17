@@ -46,7 +46,7 @@ export default function MovieFilterScreen({ navigation, route }) {
         headerRight: () =>
         (
           <Button onPress = {() => {
-            navigation.navigate("MovieListScreen", {actors: actors,});
+            navigation.navigate("MovieListScreen", {actors: actors});
           }}
           />
         )
