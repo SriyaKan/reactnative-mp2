@@ -16,7 +16,7 @@ export default function MovieListScreen({ navigation, route }) {
 
   // TODO: Fill out the methods below.
   const selectedMovie = (movieItem) => {
-    navigation.navigate("About Movie", 
+    navigation.navigate("About This Movie", 
       {movieItem: movieItem,})
   };
 
