@@ -105,7 +105,7 @@ export default function MovieListScreen({ navigation, route }) {
         placeholder="Search"
       />
       {/* TODO: Add a FlatList: https://reactnative.dev/docs/flatlist */}
-      <Flatlist 
+      <FlatList 
         data={TABLE_DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
