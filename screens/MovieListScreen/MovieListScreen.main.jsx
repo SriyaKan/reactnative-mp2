@@ -16,13 +16,13 @@ export default function MovieListScreen({ navigation, route }) {
 
   // TODO: Fill out the methods below.
   const selectedMovie = (movieItem) => {
-    navigation.navigate("About This Movie", 
-      {movieItem: movieItem,})
+    navigation.navigate("MovieDetailScreen", 
+      {movieItem})
   };
 
   const selectedFilterButton = () => {
-    navigation.navigate("Filter", 
-      {actors: actors,})
+    navigation.navigate("MovieFilterScreen", 
+      {actors})
   };
 
   useEffect(
