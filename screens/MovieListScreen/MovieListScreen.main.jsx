@@ -17,12 +17,12 @@ export default function MovieListScreen({ navigation, route }) {
   // TODO: Fill out the methods below.
   const selectedMovie = (movieItem) => {
     navigation.navigate("MovieDetailScreen", 
-      {movieItem})
+      { movieItem })
   };
 
   const selectedFilterButton = () => {
     navigation.navigate("MovieFilterScreen", 
-      {actors})
+      actors)
   };
 
   useEffect(
@@ -31,7 +31,8 @@ export default function MovieListScreen({ navigation, route }) {
       // It should lead to the MovieFilterScreen, and pass the "actors" state
       // variable as a parameter.
       navigation.setOptions({
-        headerRight: () => (<Button onPress={selectedFilterButton} title="Filter"/>)})
+        headerRight: () => (
+        <Button onPress={selectedFilterButton} title="Filter"></Button>)})
     },
     [
       /* TODO: Insert dependencies here. */

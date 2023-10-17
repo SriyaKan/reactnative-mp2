@@ -17,7 +17,7 @@ const ALL_ACTORS = getAllActors();
 // Output: a Movie Filter Screen component, which displays a list of actors to filter on.
 export default function MovieFilterScreen({ navigation, route }) {
   // TODO: Destructure navigation params from props.
-  const [actors, putActors] = useState([]);
+  const [actors, setActors] = useState([]);
   const { params } = route; 
 
 
@@ -25,8 +25,8 @@ export default function MovieFilterScreen({ navigation, route }) {
     () => {
       // TODO: Recieve actors passed by MovieListScreen here, and update
       // our local state using setActors.
-      if (params.actors) {
-        putActors(params.actors);
+      if (params.actors != null) {
+        setActors(params.actors);
       }
     },
     [
@@ -46,7 +46,7 @@ export default function MovieFilterScreen({ navigation, route }) {
         headerRight: () =>
         (
           <Button onPress = {() => {
-            navigation.navigate("Movies:", {actors: actors,});
+            navigation.navigate("MovieListScreen", {actors: actors,});
           }}
           />
         )
