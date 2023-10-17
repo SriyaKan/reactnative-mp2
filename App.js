@@ -22,5 +22,16 @@ import MovieFilterScreen from "./screens/MovieFilterScreen/MovieFilterScreen.mai
 
   https://reactnavigation.org/docs/modal */
 export default function App() {
-  return <NavigationContainer>{}</NavigationContainer>;
+  return <NavigationContainer>{
+    <Stack.Navigator>
+        <Stack.Group>
+          <Stack.Screen name="MovieListScreen" component={MovieListScreen}/>
+          <Stack.Screen name="MovieDetailScreen" component={MovieDetailScreen}/>
+        </Stack.Group>
+        <Stack.Group screenOptions={{ presentation: 'modal '}}>
+          <Stack.Screen name="MovieFilterScreen" component={MovieFilterScreen}/>
+        </Stack.Group>
+      </Stack.Navigator>
+    }</NavigationContainer>;
+
 }
