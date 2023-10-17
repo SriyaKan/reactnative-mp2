@@ -16,17 +16,22 @@ const ALL_ACTORS = getAllActors();
 // Input: navigation & route params, which we recieve through React Navigation
 // Output: a Movie Filter Screen component, which displays a list of actors to filter on.
 export default function MovieFilterScreen({ navigation, route }) {
-  const [actors, setActors] = useState([]);
-
   // TODO: Destructure navigation params from props.
+  const [actors, putActors] = useState([]);
+  const { params } = route; 
+
 
   useEffect(
     () => {
       // TODO: Recieve actors passed by MovieListScreen here, and update
       // our local state using setActors.
+      if (params.actors) {
+        putActors(params.actors);
+      }
     },
     [
       /* TODO: Insert dependent variables here. */
+      params.actors
     ]
   );
 
@@ -37,9 +42,24 @@ export default function MovieFilterScreen({ navigation, route }) {
       //  2) Show a "Done" button on the right that navigates back to the MovieListScreen
       //      and passes back our current list of actors via params.
       // https://reactnavigation.org/docs/header-buttons/
+      navigation.setOptions({
+        headerRight: () =>
+        (
+          <Button onPress = {() => {
+            navigation.navigate("Movies:", {actors: actors,});
+          }}
+          />
+        )
+
+
+      });
+
+
+
     },
     [
       /* TODO: Insert dependent state variables here. */
+      actors
     ]
   );
 
