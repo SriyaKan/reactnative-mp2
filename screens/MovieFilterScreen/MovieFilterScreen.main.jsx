@@ -25,7 +25,7 @@ export default function MovieFilterScreen({ navigation, route }) {
     () => {
       // TODO: Recieve actors passed by MovieListScreen here, and update
       // our local state using setActors.
-      if (params.actors != null) {
+      if (params.actors) {
         setActors(params.actors);
       }
     },

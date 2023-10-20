@@ -46,7 +46,7 @@ export default function MovieListScreen({ navigation, route }) {
           See https://reactnavigation.org/docs/params/#passing-params-to-a-previous-screen
           for an example of how to send data BACKWARDS in the navigation stack.
       */
-     if (params != null && params.actors != null) {
+     if (params && params.actors) {
       setActors(params.actors);
      }
     },
