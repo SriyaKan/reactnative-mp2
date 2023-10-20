@@ -19,8 +19,8 @@ export default function MovieDetailScreen({ route }) {
                 </Image>
                 <Text style={styles.h1}>{movieItem.title}</Text>
                 <Text style={styles.h1}>{movieItem.year}</Text>
-                <Text style={styles.h1}>{movieItem.genres.join(",")}</Text>
-                <Text style={styles.h1}>{movieItem.actors.join(",")}</Text>
+                <Text style={styles.h1}>{movieItem.genres.join(", ")}</Text>
+                <Text style={styles.h1}>{movieItem.actors.join(", ")}</Text>
                 <Text style={styles.h1}>{movieItem.storyline}</Text>
 
       </ScrollView>
