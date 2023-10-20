@@ -17,12 +17,12 @@ export default function MovieListScreen({ navigation, route }) {
   // TODO: Fill out the methods below.
   const selectedMovie = (movieItem) => {
     navigation.navigate("MovieDetailScreen", 
-      {movieItem: movieItem})
+      {movieItem})
   };
 
   const selectedFilterButton = () => {
     navigation.navigate("MovieFilterScreen", 
-      {actors: actors})
+      {actors})
   };
 
   useEffect(
@@ -46,7 +46,7 @@ export default function MovieListScreen({ navigation, route }) {
           See https://reactnavigation.org/docs/params/#passing-params-to-a-previous-screen
           for an example of how to send data BACKWARDS in the navigation stack.
       */
-     if (params && params.actors) {
+     if (params != null && params.actors != null) {
       setActors(params.actors);
      }
     },
@@ -71,7 +71,7 @@ export default function MovieListScreen({ navigation, route }) {
 
     // TODO: Set up search & filter criteria.
     let meetsSearchCriteria = search.trim() == "" || item.title.toLowerCase().includes(search.trim().toLowerCase());
-    let meetsActorsCriteria = actors.length == 0 || overlapFound(actors, item.actors);
+    let meetsActorsCriteria = overlapFound(actors, item.actors) || actors.length == 0;
 
     if (meetsSearchCriteria && meetsActorsCriteria) {
       // TODO: Return a MovieCell, wrapped by a TouchableOpacity so we can handle taps.
